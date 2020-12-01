@@ -2,13 +2,20 @@ package com.deveficiente.saascursoonline.compra
 
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RestController
+import javax.validation.Valid
 
 @RestController
 class CompraController {
 
+
+
     @PostMapping("/compra")
-    fun compra( compraRequest: CompraRequest) : ResponseEntity<Void> {
+    fun compra(@RequestBody @Valid compraRequest: CompraRequest) : ResponseEntity<Void> {
+
+        println( compraRequest)
+
         return ResponseEntity.ok().build();
     }
 
