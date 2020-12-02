@@ -4,9 +4,9 @@ import javax.validation.Constraint
 import javax.validation.Payload
 import kotlin.reflect.KClass
 
-@Constraint(validatedBy = [IdadeValidator::class])
+@Constraint(validatedBy = [DocumentoValidator::class])
 @Retention(AnnotationRetention.RUNTIME)
 @Target(AnnotationTarget.FIELD)
-annotation class Idade(val value: Int, val message: String = "",
+annotation class Documento(val message: String = "",
                        val groups: Array<KClass<Any>> = [],
                        val payload: Array<KClass<Payload>> = [])

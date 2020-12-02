@@ -26,6 +26,7 @@ class CompraRequest(
         val nomeNf: String,
 
         @field: NotBlank
+        @field: Documento
         val documento: String,
 
         @field: NotBlank

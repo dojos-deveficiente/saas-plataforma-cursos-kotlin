@@ -1,10 +1,11 @@
 package com.deveficiente.saascursoonline.compra
 
 import java.time.LocalDate
+import java.time.Period
 import javax.validation.ConstraintValidator
 import javax.validation.ConstraintValidatorContext
 
-class IdadeValidator : ConstraintValidator<Idade, LocalDate > {
+class IdadeValidator : ConstraintValidator<Idade, LocalDate> {
 
     private var idade: Int = 0
 
@@ -12,9 +13,8 @@ class IdadeValidator : ConstraintValidator<Idade, LocalDate > {
         idade = constraintAnnotation.value
     }
 
-    override fun isValid(value: LocalDate, context: ConstraintValidatorContext?): Boolean {
-
-
+    override fun isValid(value: LocalDate, context: ConstraintValidatorContext): Boolean {
+        return Period.between(value, LocalDate.now()).years >= idade
     }
 
 }
