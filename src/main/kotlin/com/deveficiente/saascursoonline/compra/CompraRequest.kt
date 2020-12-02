@@ -47,7 +47,7 @@ class CompraRequest(
         val tipoPlano: TipoPlano
 ) {
         fun toModel(): Compra {
-                return Compra(nome, email, dataNascimento )
+                return Compra(nome, email, dataNascimento , celular,nomeNf,documento,endereco,bairro,numero,estado, cidade,tipoPlano )
 
         }
 
