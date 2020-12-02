@@ -14,7 +14,7 @@ class CompraController {
     @PostMapping("/compra")
     fun compra(@RequestBody @Valid compraRequest: CompraRequest) : ResponseEntity<Void> {
 
-        println( compraRequest)
+        val compra: Compra = compraRequest.toModel()
 
         return ResponseEntity.ok().build();
     }
