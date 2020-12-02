@@ -1,5 +1,9 @@
 package com.deveficiente.saascursoonline.compra
 
-enum class TipoPlano {
-    BASICO,POWER,EXPERT
+import java.math.BigDecimal
+
+enum class TipoPlano(val valor: BigDecimal) {
+    BASICO(BigDecimal(199.00)),
+    POWER(BigDecimal(399.00)),
+    EXPERT(BigDecimal(599.00))
 }

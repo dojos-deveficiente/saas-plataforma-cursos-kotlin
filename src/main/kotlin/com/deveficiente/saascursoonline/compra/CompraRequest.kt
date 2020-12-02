@@ -12,6 +12,7 @@ class CompraRequest(
 
         @field: NotBlank
         @field: Email
+        @field: UniqueValue(domainClass = Compra::class, field = "email")
         val email: String,
 
         @field: NotNull
@@ -27,6 +28,7 @@ class CompraRequest(
 
         @field: NotBlank
         @field: Documento
+        @field: UniqueValue(domainClass = Compra::class, field = "documento")
         val documento: String,
 
         @field: NotBlank
@@ -46,7 +48,7 @@ class CompraRequest(
         @field: NotNull
         val tipoPlano: TipoPlano
 ) {
-        fun toModel(): Compra {
+        fun toModel(): Compra{
                 return Compra(nome, email, dataNascimento , celular,nomeNf,documento,endereco,bairro,numero,estado, cidade,tipoPlano )
 
         }

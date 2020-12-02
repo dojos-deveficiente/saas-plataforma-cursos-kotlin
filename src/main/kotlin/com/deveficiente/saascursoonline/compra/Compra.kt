@@ -7,22 +7,22 @@ import javax.persistence.Entity
 import javax.persistence.Id
 @Entity
 class Compra(
-        nome: String,
-        email: String,
-        dataNascimento: LocalDate,
-        celular: String,
-        nomeNf: String,
-        documento: String,
-        endereco: String,
-        bairro: String,
-        numero: String,
-        estado: String,
-        cidade: String,
-        tipoPlano: TipoPlano
+        val nome: String,
+        val email: String,
+        val dataNascimento: LocalDate,
+        val celular: String,
+        val nomeNf: String,
+        val documento: String,
+        val endereco: String,
+        val bairro: String,
+        val numero: String,
+        val estado: String,
+        val cidade: String,
+        val tipoPlano: TipoPlano
 
 ) {
    @Id
-   val  codigo: UUID = UUID.randomUUID()
-   val  instanteCriacao: Instant = Instant.now()
+   val codigo: UUID = UUID.randomUUID()
+   val instanteCriacao: Instant = Instant.now()
 
 }
