@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat
 import java.time.LocalDate
 import javax.validation.constraints.Email
 import javax.validation.constraints.NotBlank
+import javax.validation.constraints.NotNull
 
 class CompraRequest(
         @field: NotBlank
@@ -13,6 +14,8 @@ class CompraRequest(
         @field: Email
         val email: String,
 
+        @field: NotNull
+        @field: Idade(18)
         @JsonFormat(pattern = "dd/MM/yyyy", shape = JsonFormat.Shape.STRING)
         val dataNascimento: LocalDate,
 
@@ -39,7 +42,8 @@ class CompraRequest(
 
         @field: NotBlank
         val cidade: String,
-        val tipoPlano: String
+        @field: NotNull
+        val tipoPlano: TipoPlano
 ) {
 
 }
